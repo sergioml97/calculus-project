@@ -2,7 +2,7 @@
 A project designed in DevOps subject - MUITE (ETSIT)
 
 	POLINOMIOS -> Funcionalidad/Servicio + Observaciones
-
+	
 -Construir un Polinomio P(x) de coeficientes enteros a partir de un array de enteros.
 	El índice de cada elemento se corresponde con el coeficiente de la potencia de x correspondiente. Por ejemplo, para
 	2x3 - 6x + 1, x[3] = 2, x[2] = 0, x[1] = -6, x[0] = 1
