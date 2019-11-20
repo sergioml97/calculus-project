@@ -3,7 +3,7 @@ package telemaquinas;
 /**
  * Hello world!
  */
-public final class App {
+public final class Matrix {
     private Matrix() {
 
 
