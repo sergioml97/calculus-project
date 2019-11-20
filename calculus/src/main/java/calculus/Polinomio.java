@@ -3,9 +3,7 @@ package calculus;
     {
        private long coeficientes[];
      
-       public Polinomio()
-       {
-       }
+       public Polinomio(){}
        
        public Polinomio(long[] coef, int grado){
     	    if (grado < 0) {
@@ -36,16 +34,7 @@ package calculus;
        {
           return i < coeficientes.length ? coeficientes[i] : 0;
        }
-     
-       //public void leer()
-      // {
-    	
-          //int n = Keyboard.getNextInt("Grado (n): ", 0);
-         //coeficientes = new long[n + 1];
-          //for ( int i = coeficientes.length - 1; i >= 0; --i )
-             //coeficientes[i] = Keyboard.getNextLong("Coeficiente de x^" + i + ": ");
-       //}
-     
+
        public void imprimir()
        {
           for ( int i = grado(); i >= 0; --i )
