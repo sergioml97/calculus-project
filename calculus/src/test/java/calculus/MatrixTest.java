@@ -32,7 +32,7 @@ public class MatrixTest {
     //Test de constructor matrix con datos nulos
     @Test (expected=NullPointerException.class)
     public void testMatrixContainsNull() throws Exception,NullPointerException{
-        double[][] d = { { (Double) null, 2, 3 }, { 4, 5, 6 }, { 9, 1, 3} };
+        double[][] d = { null, { 4, 5, 6 }, { 9, 1, 3} };
         Matrix D = new Matrix(d);
         D.print();        
         System.out.println();
