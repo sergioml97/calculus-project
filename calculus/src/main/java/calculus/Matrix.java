@@ -53,7 +53,7 @@ return array;
 }
 
 //imprimir matriz
-public void print() {
+public void toString() {
       for (int i = 0; i < M; i++) {
           for (int j = 0; j < N; j++) 
               System.out.printf("%9.4f ", data[i][j]);
@@ -61,6 +61,16 @@ public void print() {
       }
   }
 
+//clonar matriz
+public double[][] getClone(){
+  double[][] mClone = new double[M][N];
+  for (int i = 0; i < M; i++) {
+    for (int j = 0; j < N; j++){
+      mClone[i][j] = data[i][j]
+    }
+  }
+  return mClone;
+}
       
 //metodo quitar fila
   public static Matrix quitarFila (Matrix m  , int n) throws Exception{ 
