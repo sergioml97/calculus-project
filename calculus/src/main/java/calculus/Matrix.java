@@ -60,13 +60,29 @@ public final class Matrix {
 return array;
 }
 
-//imprimir matriz
-public void to_string() {
+//imprimir matriz por consola
+public void print() {
       for (int i = 0; i < M; i++) {
           for (int j = 0; j < N; j++) 
               System.out.printf("%9.4f ", data[i][j]);
           System.out.println();
       }
+  }
+
+//matriz toString
+@Override
+public String toString() {
+
+      String s = new String();
+
+      for (int i = 0; i < M; i++) {
+          for (int j = 0; j < N; j++) {
+              s +="\t" + data[i][j];
+          }
+          s += "\n";
+      }
+
+      return s;
   }
 
       
@@ -108,12 +124,12 @@ public void to_string() {
       double[][] d = { { 1, 2, 3 }, { 4, 5, 6 }, { 9, 1, 3} };
       Matrix D = new Matrix(d);
       System.out.println("Matriz D:");
-      D.to_string();        
+      D.print();        
       System.out.println();
       int fila = -1;
       Matrix F = quitarFila(D, fila);
       System.out.println("Matriz D sin fila " + fila);
-      F.to_string();        
+      F.print();        
       System.out.println();
       double [][] array = F.toArray();
       System.out.println("Imprimos array");
