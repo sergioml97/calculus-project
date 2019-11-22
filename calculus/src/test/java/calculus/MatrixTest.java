@@ -83,4 +83,13 @@ public class MatrixTest {
         D.toArray();  
         System.out.println();
     }
+
+    //Test de clonar matriz
+    @Test
+    public void testGetClone()throws Exception{
+        double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
+        Matrix D = new Matrix(d);
+        Matrix D2 = D.getClone();
+        D.equals(D2);
+    }
 }

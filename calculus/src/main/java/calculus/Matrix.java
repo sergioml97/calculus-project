@@ -72,20 +72,22 @@ public void print() {
 //matriz toString
 @Override
 public String toString() {
+    String s = new String();
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            s +="\t" + data[i][j];
+        }
+        s += "\n";
+    }
+    return s;
+}
 
-      String s = new String();
+ //clonar matriz 
+public Matrix getClone() throws Exception, NullPointerException{
+  return new Matrix(data);
+}
 
-      for (int i = 0; i < M; i++) {
-          for (int j = 0; j < N; j++) {
-              s +="\t" + data[i][j];
-          }
-          s += "\n";
-      }
 
-      return s;
-  }
-
-      
 //metodo quitar fila
   public static Matrix quitarFila (Matrix m  , int n) throws Exception{ 
     
