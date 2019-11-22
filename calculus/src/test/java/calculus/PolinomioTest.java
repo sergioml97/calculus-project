@@ -13,11 +13,19 @@ public class PolinomioTest {
      */
     //Test de constructor matrix
     @Test
-    public void testPolinomio() throws Exception,NullPointerException{
-        double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
-        Matrix D = new Matrix(d);
-        D.to_string();        
-        System.out.println();
+    public void testPolinomioSuma() {
+        int grado = 2;
+        long [] coeficientes = new long [grado+1];
+        coeficientes[0] = (long) 1.00;
+        coeficientes[1] = (long) 3.00;
+        coeficientes[2] = (long) 1.00;
+
+        Polinomio polinomio1 = new Polinomio(coeficientes, grado);
+   
+        Polinomio polinomio2 = new Polinomio(coeficientes, grado);
+
+        polinomio1.sumar(polinomio2);
+
     }
 
     //Test de constructor matrix con array nulo
