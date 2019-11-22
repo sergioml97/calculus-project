@@ -2,7 +2,7 @@ package calculus;
 
     public class Polinomio
     {
-       private long coeficientes[];
+       protected long coeficientes[];
      
        public Polinomio(){}
        
@@ -57,6 +57,37 @@ package calculus;
              resultado.coeficientes[i] = coeficiente(i) + otro.coeficiente(i);
      
           return resultado;
+       }
+
+       @Override
+       public boolean equals(Object p){
+ 
+           if (!(p instanceof Polinomio)){
+              return false;
+           }
+           if (p == null){
+              return false;
+           }
+
+           Polinomio pp1 = (Polinomio) this;
+           Polinomio pp2 = (Polinomio) p;
+
+           if (pp1 == pp2 ){
+              return true;
+           }
+
+           if ( pp1.coeficientes.length != pp2.coeficientes.length){
+              return false;
+           }
+
+           for (int i = 0; i < pp1.coeficientes.length; i++){
+              if (pp1.coeficientes[i] != pp2.coeficientes[i]){
+                 return false;
+              }
+           }
+           
+
+           return true;
        }
      
        Polinomio restar(Polinomio otro)

@@ -1,5 +1,8 @@
 package calculus;
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 //import static org.junit.Assert.*;
@@ -16,15 +19,24 @@ public class PolinomioTest {
     public void testPolinomioSuma() {
         int grado = 2;
         long [] coeficientes = new long [grado+1];
-        coeficientes[0] = (long) 1.00;
-        coeficientes[1] = (long) 3.00;
-        coeficientes[2] = (long) 1.00;
+        coeficientes[0] = 1L;
+        coeficientes[1] = 3L;
+        coeficientes[2] = 1L;
 
         Polinomio polinomio1 = new Polinomio(coeficientes, grado);
    
         Polinomio polinomio2 = new Polinomio(coeficientes, grado);
 
         polinomio1.sumar(polinomio2);
+
+        coeficientes[0] = 2L;
+        coeficientes[1] = 6L;
+        coeficientes[2] = 2L;
+
+        Polinomio polinomio3 = new Polinomio(coeficientes, grado);
+
+
+        assertEquals(polinomio3, polinomio1.sumar(polinomio2));
 
     }
 
