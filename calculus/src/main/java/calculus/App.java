@@ -1,4 +1,4 @@
-package telemaquinas;
+package calculus;
 
 /**
  * Hello world!
