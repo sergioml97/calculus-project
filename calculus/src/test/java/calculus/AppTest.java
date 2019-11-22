@@ -1,4 +1,4 @@
-package telemaquinas;
+package calculus;
 
 import org.junit.Test;
 
