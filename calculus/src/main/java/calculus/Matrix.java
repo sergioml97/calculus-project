@@ -10,8 +10,14 @@ public final class Matrix {
   private final double[][] data;   // M-by-N array
 
 
+  public Matrix() throws Exception{
+    this(new double[0][0]);
+  }
+
  //Constructor de matriz
  public Matrix(int M, int N) {
+
+      // Lanzar exceptión si N o M < 0
       this.M = M;
       this.N = N;
       data = new double[M][N];
@@ -37,8 +43,10 @@ public final class Matrix {
 
 } catch  (NullPointerException e1){
     System.out.println("Contiene nulos");
+    throw e1;
 } catch  (Exception e2){
   System.out.println("Filas de diferente tamaño");
+  throw e2;
 }
 
 }
@@ -65,7 +73,7 @@ public void to_string() {
 //metodo quitar fila
   public static Matrix quitarFila (Matrix m  , int n) throws Exception{ 
     
-    Matrix res  = new Matrix(0,0);
+    Matrix res  = null;
       // if(!esMatriz(m)){   
       //                    return null;  }     
     try{
@@ -84,9 +92,9 @@ public void to_string() {
                 }                
          }     
 
-     }catch(Exception e){
+     }catch(Exception e1){
           System.out.println("No existe la fila");
-          return null;
+          throw e1;
         }   
       finally{
         return res;
@@ -102,7 +110,7 @@ public void to_string() {
       System.out.println("Matriz D:");
       D.to_string();        
       System.out.println();
-      int fila = 2;
+      int fila = -1;
       Matrix F = quitarFila(D, fila);
       System.out.println("Matriz D sin fila " + fila);
       F.to_string();        

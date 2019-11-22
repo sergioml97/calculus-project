@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Matrix",
+            "request": "launch",
+            "mainClass": "calculus.Matrix",
+            "projectName": "calculus"
+        }
+    ]
+}
