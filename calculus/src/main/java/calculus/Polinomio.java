@@ -1,4 +1,5 @@
 package calculus;
+
     public class Polinomio
     {
        private long coeficientes[];
