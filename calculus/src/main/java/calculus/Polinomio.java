@@ -5,6 +5,9 @@ package calculus;
      
        public Polinomio(){}
        
+////////////////////////////////////////////// POLINOMIO CON ARRAYS //////////////////////////////////////////////
+
+
        public Polinomio(long[] coef, int grado){
     	    if (grado < 0) {
     	      coeficientes = new long[1];
@@ -49,6 +52,8 @@ package calculus;
           }
        }
      
+////////////////////////////////////////////////// SUMA //////////////////////////////////////////////////
+
        Polinomio sumar(Polinomio otro)
        {
           int grado = Math.max( grado(), otro.grado() );
@@ -59,6 +64,8 @@ package calculus;
           return resultado;
        }
      
+////////////////////////////////////////////////// RESTA //////////////////////////////////////////////////
+
        Polinomio restar(Polinomio otro)
        {
           int grado = Math.max( grado(), otro.grado() );
@@ -68,7 +75,9 @@ package calculus;
      
           return resultado;
        }
-     
+
+//////////////////////////////////////// MULTIPLICACIÓN DE POLINOMIOS //////////////////////////////////////////
+
        Polinomio multiplicar(Polinomio otro)
        {
           int grado = grado() + otro.grado();

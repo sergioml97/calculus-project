@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Polinomio",
+            "request": "launch",
+            "mainClass": "calculus.Polinomio",
+            "projectName": "calculus"
+        }
+    ]
+}
