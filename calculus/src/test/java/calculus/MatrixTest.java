@@ -16,7 +16,7 @@ public class MatrixTest {
     public void testMatrix() throws Exception,NullPointerException{
         double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
         Matrix D = new Matrix(d);
-        D.print();        
+        D.to_string();        
         System.out.println();
     }
 
@@ -25,7 +25,7 @@ public class MatrixTest {
     public void testMatrixArrayIsNull() throws Exception,NullPointerException{
         double[][] d = null;
         Matrix D = new Matrix(d);
-        D.print();        
+        D.to_string();        
         System.out.println();
     }
 
@@ -34,7 +34,7 @@ public class MatrixTest {
     public void testMatrixContainsNull() throws Exception,NullPointerException{
         double[][] d = { null, { 4, 5, 6 }, { 9, 1, 3} };
         Matrix D = new Matrix(d);
-        D.print();        
+        D.to_string();        
         System.out.println();
     }
 
@@ -52,7 +52,7 @@ public class MatrixTest {
     public void testMatrixDiferentSize2() throws Exception{
         double[][] d = { { 2, 3 }, { 4, 5, 6 }, { 9, 1, 3} };
         Matrix D = new Matrix(d);
-        D.print();        
+        D.to_string();        
         System.out.println();
     }
 
@@ -62,7 +62,7 @@ public class MatrixTest {
         double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
         Matrix D = new Matrix(d);
         Matrix F = Matrix.quitarFila(D, 1);  
-        F.print();
+        F.to_string();
         System.out.println();
     }
 
@@ -72,7 +72,7 @@ public class MatrixTest {
         double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
         Matrix D = new Matrix(d);
         Matrix F = Matrix.quitarFila(D, 7);  
-        F.print();
+        F.to_string();
         System.out.println();
     }
 

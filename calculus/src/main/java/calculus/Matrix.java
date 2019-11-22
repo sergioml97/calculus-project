@@ -53,7 +53,7 @@ return array;
 }
 
 //imprimir matriz
-public void print() {
+public void to_string() {
       for (int i = 0; i < M; i++) {
           for (int j = 0; j < N; j++) 
               System.out.printf("%9.4f ", data[i][j]);
@@ -100,12 +100,12 @@ public void print() {
       double[][] d = { { 1, 2, 3 }, { 4, 5, 6 }, { 9, 1, 3} };
       Matrix D = new Matrix(d);
       System.out.println("Matriz D:");
-      D.print();        
+      D.to_string();        
       System.out.println();
       int fila = 2;
       Matrix F = quitarFila(D, fila);
       System.out.println("Matriz D sin fila " + fila);
-      F.print();        
+      F.to_string();        
       System.out.println();
       double [][] array = F.toArray();
       System.out.println("Imprimos array");
