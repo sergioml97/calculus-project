@@ -6,19 +6,19 @@ package calculus;
      
        public Polinomio(){}
        
-       public Polinomio(long[] coef, int grado){
-    	    if (grado < 0) {
-    	      coeficientes = new long[1];
-    	      coeficientes[0] = 0;
-    	      grado = 0;
-    	    } else {
-    	      coeficientes = new long[grado + 1];
-    	      for(int i = 0; i <= grado; i++){
-    	        coeficientes[i] = coef[i];
-    	      }
-    	    }
-    	  }
-     
+       public Polinomio(long[] coef) throws NullPointerException {
+          
+         try{
+
+          coeficientes = new long[coef.length];
+    	    for (int i = 0; i < coef.length; i++){
+              coeficientes[i] = coef[i];
+           }
+         }catch  (NullPointerException e){
+            System.out.println("Array null");
+        } 
+      }
+       
        public Polinomio(int grado)
        {
           if ( grado <= 0 ) grado = 0;
@@ -29,7 +29,12 @@ package calculus;
        {
           return coeficientes.length - 1;
        }
-     
+
+       public Polinomio clone() {
+         return new Polinomio(coeficientes);
+     }
+
+
        public long coeficiente(int i)
        {
           return i < coeficientes.length ? coeficientes[i] : 0;
@@ -91,6 +96,7 @@ package calculus;
           System.out.println();
        }
      
+       /**
        public static void main(String args[])
        {
           int grado = 2;
@@ -102,13 +108,15 @@ package calculus;
           Polinomio polinomio1 = new Polinomio(coeficientes, grado);
           System.out.println("Polinomio 1");
 
+          polinomio1.clone();
+
           polinomio1.imprimir();
-          System.out.println("");
-          System.out.println("El coeficiente 1 es: " + polinomio1.coeficiente(1));
-          System.out.println("El grado es: " +polinomio1.grado());
+          //System.out.println("");
+          //System.out.println("El coeficiente 1 es: " + polinomio1.coeficiente(1));
+          //System.out.println("El grado es: " +polinomio1.grado());
 
      
-          System.out.println("\n\nPolinomio 2");
+          //System.out.println("\n\nPolinomio 2");
           coeficientes[0] = (long) 5.00;
           Polinomio polinomio2 = new Polinomio(coeficientes, grado);
           //polinomio2.leer();
@@ -120,6 +128,6 @@ package calculus;
           imprimirOperacion( polinomio2, polinomio1, "-", polinomio2.restar(polinomio1) );
           imprimirOperacion( polinomio1, polinomio2, "*", polinomio1.multiplicar(polinomio2) );
        }
-     
+       */
       
     }
