@@ -57,5 +57,36 @@ public class PolinomioTest {
 
  }
 
+ //Test de multiplicar polinomios
+ @Test
+ public void testPolinomiosMultiplicar() {
 
+
+
+     long [] coeficientes = new long [3];
+     coeficientes[0] = 1L;
+     coeficientes[1] = 3L;
+     coeficientes[2] = 1L;
+
+     Polinomio polinomio1 = new Polinomio(coeficientes);
+
+     Polinomio polinomio2 = new Polinomio(coeficientes);
+
+    // polinomio1.imprimir();
+    polinomio1.imprimirOperacion( polinomio1, polinomio2, "*", polinomio1.multiplicar(polinomio2) );
+
+    long [] prueba = new long [5];
+    prueba[0] = 1L;
+    prueba[1] = 6L;
+    prueba[2] = 11L;
+    prueba[3] = 6L;
+    prueba[4] = 1L;
+
+    Polinomio polinomio3 = new Polinomio(prueba);
+    polinomio3.imprimir();
+
+    assertEquals(polinomio3, polinomio1.multiplicar(polinomio2));
+
+     
+ }
 }
