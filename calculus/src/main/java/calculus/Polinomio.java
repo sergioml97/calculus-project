@@ -95,14 +95,9 @@ package calculus;
 
        long[] aArray(){
 
-         long [] array1 = new long [grado()];
-
-         for(int i = 0; i <= grado() ; i++){
-          
-           array1[i] = coeficientes[i];
-          }
-
-          return array1;
+         long [] resultado = new long[coeficientes.length];
+         resultado= coeficientes;
+          return resultado;
 
 
        }

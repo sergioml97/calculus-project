@@ -59,7 +59,7 @@ public class PolinomioTest {
 
  //Test de multiplicar polinomios
  @Test
- public void testPolinomiosMultiplicar() {
+ public void testPolinomioMultiplicar() {
 
 
 
@@ -88,5 +88,21 @@ public class PolinomioTest {
     assertEquals(polinomio3, polinomio1.multiplicar(polinomio2));
 
      
+ }
+
+ 
+ //Test de convertir en array un polinomio
+ @Test
+ public void testPolinomioArray() {
+
+     long [] coeficientes = new long [3];
+     coeficientes[0] = 1L;
+     coeficientes[1] = 3L;
+     coeficientes[2] = 1L;
+
+     Polinomio polinomio1 = new Polinomio(coeficientes);
+
+     assertArrayEquals(coeficientes, polinomio1.aArray());
+
  }
 }
