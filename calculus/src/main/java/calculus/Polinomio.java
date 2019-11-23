@@ -53,6 +53,59 @@ package calculus;
              }
           }
        }
+
+       
+       @Override
+       public boolean equals(Object p){
+ 
+           if (!(p instanceof Polinomio)){
+              return false;
+           }
+           if (p == null){
+              return false;
+           }
+
+           Polinomio pp1 = (Polinomio) this;
+           Polinomio pp2 = (Polinomio) p;
+
+           if (pp1 == pp2 ){
+              return true;
+           }
+
+           if ( pp1.coeficientes.length != pp2.coeficientes.length){
+              return false;
+           }
+
+           for (int i = 0; i < pp1.coeficientes.length; i++){
+              if (pp1.coeficientes[i] != pp2.coeficientes[i]){
+                 return false;
+              }
+           }
+           
+
+           return true;
+       }
+
+       String aString() {
+
+         String resultado1;
+         resultado1= toString();
+         return resultado1;
+       }
+
+       long[] aArray(){
+
+         long [] array1 = new long [grado()];
+
+         for(int i = 0; i <= grado() ; i++){
+          
+           array1[i] = coeficientes[i];
+          }
+
+          return array1;
+
+
+       }
      
        Polinomio sumar(Polinomio otro)
        {
