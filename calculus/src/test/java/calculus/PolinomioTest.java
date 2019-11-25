@@ -1,6 +1,5 @@
 package calculus;
 
-
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
@@ -30,8 +29,9 @@ public class PolinomioTest {
         long[] poli = {1, 3, 7};
         Polinomio P = new Polinomio(poli);
         Polinomio cloneP = P.clone();
-        cloneP.imprimir();        
-        System.out.println();
+        cloneP.imprimir();       
+        assertEquals(P, cloneP); 
+        //System.out.println();
     }
  //Test de sumar polinomios
  @Test

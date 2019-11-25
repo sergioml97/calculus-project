@@ -1,13 +1,15 @@
 package calculus;
 
+import javax.print.attribute.standard.ReferenceUriSchemesSupported;
+
 /**
  * Hello world!
  */
-public final class Matrix {
+public class Matrix {
 
-  private final int M;             // number of rows
-  private final int N;             // number of columns
-  private final double[][] data;   // M-by-N array
+  private int M;             // number of rows
+  private int N;             // number of columns
+  private double[][] data;   // M-by-N array
 
 
   public Matrix() throws Exception{
@@ -15,9 +17,9 @@ public final class Matrix {
   }
 
  //Constructor de matriz
- public Matrix(int M, int N) {
-
+ public Matrix(int M, int N) throws Exception {
       // Lanzar exceptión si N o M < 0
+      if (M < 0 || N < 0) throw new Exception();
       this.M = M;
       this.N = N;
       data = new double[M][N];
@@ -51,7 +53,7 @@ public final class Matrix {
 
 }
 
- //Constructor de matriz con array bidimensional
+ //Metodo para pasar matriz a array
  public double[][] toArray() {
   double[][] array = new double[M][N];
   for (int i = 0; i < M; i++)
@@ -60,7 +62,7 @@ public final class Matrix {
 return array;
 }
 
-//imprimir matriz
+//metodo para imprimir la matriz
 public void to_string() {
       for (int i = 0; i < M; i++) {
           for (int j = 0; j < N; j++) 
@@ -69,7 +71,24 @@ public void to_string() {
       }
   }
 
-      
+  //matriz toString
+@Override
+public String toString() {
+    String s = new String();
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            s +="\t" + data[i][j];
+        }
+        s += "\n";
+    }
+    return s;
+}
+
+//clonar matriz 
+public Matrix getClone() throws Exception, NullPointerException{
+  return new Matrix(data);
+}
+
 //metodo quitar fila
   public static Matrix quitarFila (Matrix m  , int n) throws Exception{ 
     
@@ -98,10 +117,41 @@ public void to_string() {
         }   
       finally{
         return res;
-      }                    
-              
-    }    
-                                                              
+      }       
+    }
+      
+    //metodo para comparar las matrices
+      @Override
+      public boolean equals(Object m){
+
+          if (!(m instanceof Matrix)){
+             return false;
+          }
+          if (m == null){
+             return false;
+          }
+
+          Matrix mm1 = (Matrix) this;
+          Matrix mm2 = (Matrix) m;
+
+          if (mm1 == mm2 ){
+             return true;
+          }
+
+          if ( mm1.data.length != mm2.data.length){
+            return false;
+         }
+
+            if(mm1.data[0].length != mm2.data[0].length) 
+              return false;
+
+          for (int i = 0; i < mm1.data.length; i++)
+            for (int j = 0; j < mm1.data[0].length; j++)
+             if (mm1.data[i][j] != mm2.data[i][j])
+                return false;
+             
+        return true;
+      }                                                   
 
     //MAIN PARA MOSTRAR RESULTADOS
     public static void main(String[] args) throws Exception{
