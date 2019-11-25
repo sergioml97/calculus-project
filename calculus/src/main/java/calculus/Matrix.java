@@ -63,7 +63,7 @@ return array;
 }
 
 //metodo para imprimir la matriz
-public void to_string() {
+public void print() {
       for (int i = 0; i < M; i++) {
           for (int j = 0; j < N; j++) 
               System.out.printf("%9.4f ", data[i][j]);
@@ -71,7 +71,7 @@ public void to_string() {
       }
   }
 
-  //matriz toString
+//metodo de matriz toString
 @Override
 public String toString() {
     String s = new String();
@@ -84,7 +84,7 @@ public String toString() {
     return s;
 }
 
-//clonar matriz 
+//metodo para clonar matriz 
 public Matrix getClone() throws Exception, NullPointerException{
   return new Matrix(data);
 }
@@ -158,12 +158,12 @@ public Matrix getClone() throws Exception, NullPointerException{
       double[][] d = { { 1, 2, 3 }, { 4, 5, 6 }, { 9, 1, 3} };
       Matrix D = new Matrix(d);
       System.out.println("Matriz D:");
-      D.to_string();        
+      D.print();        
       System.out.println();
       int fila = -1;
       Matrix F = quitarFila(D, fila);
       System.out.println("Matriz D sin fila " + fila);
-      F.to_string();        
+      F.print();        
       System.out.println();
       double [][] array = F.toArray();
       System.out.println("Imprimos array");
