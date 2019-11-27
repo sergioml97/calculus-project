@@ -77,13 +77,23 @@ public class MatrixTest {
         System.out.println();
     }
 
+    //Test de quitar columna que no existe
+    @Test (expected=Exception.class)
+    public void testMatrixQuitarColumnaException() throws Exception{
+        double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
+        Matrix D = new Matrix(d);
+        Matrix F = Matrix.quitarColumna(D, -1);  
+        F.toString();
+        System.out.println();
+    }
+
     //Test de quitar fila que no existe
     @Test (expected=Exception.class)
     public void testMatrixQuitarFilaException() throws Exception{
         double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
         Matrix D = new Matrix(d);
         Matrix F = Matrix.quitarFila(D, -1);  
-        F.toSring();
+        F.toString();
         System.out.println();
     }
 

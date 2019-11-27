@@ -145,6 +145,10 @@ public Matrix getClone() throws Exception, NullPointerException{
         return res;
       }       
     }
+
+    //método obtener Fila
+    
+    //método obtener Columna
       
     //metodo para comparar las matrices
       @Override
