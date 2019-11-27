@@ -92,9 +92,7 @@ public Matrix getClone() throws Exception, NullPointerException{
 //metodo quitar fila
   public static Matrix quitarFila (Matrix m  , int n) throws Exception{ 
     
-    Matrix res  = null;
-      // if(!esMatriz(m)){   
-      //                    return null;  }     
+    Matrix res  = null; 
     try{
       if (n >= m.data.length  ||  n<0) throw new Exception();
 
@@ -114,6 +112,34 @@ public Matrix getClone() throws Exception, NullPointerException{
      }catch(Exception e1){
           System.out.println("No existe la fila");
           throw e1;
+        }   
+      finally{
+        return res;
+      }       
+    }
+
+    //metodo para quitar columna
+  public static Matrix quitarColumna (Matrix m  , int n) throws Exception{ 
+    
+    Matrix res  = null;    
+    try{
+      if (n >= m.data.length  ||  n<0) throw new Exception();
+
+     res  = new Matrix(m.data.length,m.data[0].length-1);
+
+      for(int  i = 0; i <  res.data.length;i++){      
+        for(int   j =  0; j < res.data[i].length;j++) {  
+              if  (i <  n){            
+                  res.data[i][j]  =  m.data[i][j];            
+                          }                   
+              else if  (j >=n && j+1 <  m.data[i].length){   
+                          res.data[i][j] = m.data[i][j+1];            
+                                                  }                     
+                }                
+         }     
+     }catch(Exception e2){
+          System.out.println("No existe la columna");
+          throw e2;
         }   
       finally{
         return res;

@@ -58,12 +58,22 @@ public class MatrixTest {
     }
 
     //Test de quitar fila
-    @Test
+    @Test 
     public void testMatrixQuitarFila() throws Exception{
         double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
         Matrix D = new Matrix(d);
         Matrix F = Matrix.quitarFila(D, 1);  
-        F.to_string();
+        F.toString();
+        System.out.println();
+    }
+
+    //Test de quitar columna
+    @Test 
+    public void testMatrixQuitarColumna() throws Exception{
+        double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
+        Matrix D = new Matrix(d);
+        Matrix F = Matrix.quitarColumna(D, 1);  
+        F.toString();
         System.out.println();
     }
 
