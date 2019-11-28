@@ -56,7 +56,7 @@ public class MatrixTest {
         double[][] d = { { 2, 3 }, { 4, 5, 6 }, { 9, 1, 3} };
         Matrix D = new Matrix(d);
     }
-
+//--------------------------------------------------------------------------------
     //Test de quitar fila
     @Test 
     public void testMatrixQuitarFila() throws Exception{
@@ -66,27 +66,7 @@ public class MatrixTest {
         F.toString();
         System.out.println();
     }
-
-    //Test de quitar columna
-    @Test 
-    public void testMatrixQuitarColumna() throws Exception{
-        double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
-        Matrix D = new Matrix(d);
-        Matrix F = Matrix.quitarColumna(D, 1);  
-        F.toString();
-        System.out.println();
-    }
-
-    //Test de quitar columna que no existe
-    @Test (expected=Exception.class)
-    public void testMatrixQuitarColumnaException() throws Exception{
-        double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
-        Matrix D = new Matrix(d);
-        Matrix F = Matrix.quitarColumna(D, -1);  
-        F.toString();
-        System.out.println();
-    }
-
+//--------------------------------------------------------------------------------
     //Test de quitar fila que no existe
     @Test (expected=Exception.class)
     public void testMatrixQuitarFilaException() throws Exception{
@@ -96,7 +76,48 @@ public class MatrixTest {
         F.toString();
         System.out.println();
     }
+//--------------------------------------------------------------------------------
+    //Test de quitar columna
+    @Test 
+    public void testMatrixQuitarColumna() throws Exception{
+        double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
+        Matrix D = new Matrix(d);
+        Matrix F = Matrix.quitarColumna(D, 1);  
+        F.toString();
+        System.out.println();
+    }
+//--------------------------------------------------------------------------------
+    //Test de quitar columna que no existe
+    @Test (expected=Exception.class)
+    public void testMatrixQuitarColumnaException() throws Exception{
+        double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
+        Matrix D = new Matrix(d);
+        Matrix F = Matrix.quitarColumna(D, -1);  
+        F.toString();
+        System.out.println();
+    }
+//--------------------------------------------------------------------------------
+    // Test de obtener fila
+    @Test 
+    public void testMatrixobtenerFila() throws Exception{
+        double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
+        Matrix D = new Matrix(d);
+        double [] F = Matrix.obtenerFila(D, 1);  
+        F.toString();
+        System.out.println();
+    }
 
+//--------------------------------------------------------------------------------
+    // Test de obtener columna
+    @Test 
+    public void testMatrixobtenerColumna() throws Exception{
+        double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
+        Matrix D = new Matrix(d);
+        double [] C = Matrix.obtenerColumna(D, 1);  
+        C.toString();
+        System.out.println();
+    }
+//--------------------------------------------------------------------------------
     //Test de clonar matriz
     @Test
     public void testGetClone()throws Exception{
