@@ -202,6 +202,21 @@ public Matrix getClone() throws Exception, NullPointerException{
                               return column;
                             }
                                                                               }
+
+
+//----------------------------------------------------------------------------
+// método obtener traspuesta
+public Matrix getTraspuesta()throws Exception, NullPointerException {
+  Matrix tr = new Matrix(this.data);
+  for (int i = 0; i < tr.data.length; i++){
+    for (int j = 0; j < tr.data[i].length; j++){
+      tr.data[i][j] = this.data[j][i];
+    }
+  }
+  return tr;
+}    
+
+
 //----------------------------------------------------------------------------
   // metodo para comparar las matrices
   @Override

@@ -138,4 +138,15 @@ public class MatrixTest {
         //Y comprobamos la matriz con la original
         assertEquals(D, A);
     }
+
+    @Test
+    public void testGetTraspuesta() throws Exception{
+        //Creamos una matriz y su traspuesta
+        double[][] d = { { 2, 3, 4 }, { 4, 5, 6 }, { 9, 1, 3} };
+        Matrix D = new Matrix(d);
+        double[][] tr = { { 2, 4, 9 }, { 3, 5, 1 }, { 4, 6, 3} };
+        Matrix TR = new Matrix(tr);
+        Matrix TR2 = D.getTraspuesta();
+        assertEquals(TR, TR2);
+    } 
 }
