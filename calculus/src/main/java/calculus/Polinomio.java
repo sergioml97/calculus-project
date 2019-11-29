@@ -6,7 +6,7 @@ package calculus;
      
        public Polinomio(){}
        
-       public Polinomio(long[] coef) throws NullPointerException {
+       public Polinomio(final long[] coef) throws Exception,NullPointerException {
           
          try{
 
@@ -14,7 +14,7 @@ package calculus;
     	    for (int i = 0; i < coef.length; i++){
               coeficientes[i] = coef[i];
            }
-         }catch  (NullPointerException e){
+         }catch  (final NullPointerException e){
             System.out.println("Array null");
         } 
       }
@@ -30,12 +30,12 @@ package calculus;
           return coeficientes.length - 1;
        }
 
-       public Polinomio clone() {
+       public Polinomio getClone() throws Exception{
          return new Polinomio(coeficientes);
      }
 
 
-       public long coeficiente(int i)
+       public long coeficiente(final int i)
        {
           return i < coeficientes.length ? coeficientes[i] : 0;
        }
@@ -53,10 +53,25 @@ package calculus;
              }
           }
        }
+       
+       public String toString() {
+         String p = new String();
+         for (int i = coeficientes.length - 1; i >= 0 ; i--) {
+            if ( coeficientes[i] != 0 )
+            {
+               if ( i == 0) p += coeficientes[i];            
+               if( i == 1 ) p += coeficientes[i] + "x + ";
+               if ( i >= 2 ) p += coeficientes[i] + "x^" + i + " + ";
+             
+            }
+         }
+         return p;
+     }
+
 
        
        @Override
-       public boolean equals(Object p){
+       public boolean equals(final Object p){
  
            if (!(p instanceof Polinomio)){
               return false;
@@ -65,8 +80,8 @@ package calculus;
               return false;
            }
 
-           Polinomio pp1 = (Polinomio) this;
-           Polinomio pp2 = (Polinomio) p;
+           final Polinomio pp1 = (Polinomio) this;
+           final Polinomio pp2 = (Polinomio) p;
 
            if (pp1 == pp2 ){
               return true;
@@ -86,6 +101,7 @@ package calculus;
            return true;
        }
 
+
        String aString() {
 
          String resultado1;
@@ -93,7 +109,7 @@ package calculus;
          return resultado1;
        }
 
-       long[] aArray(){
+       long[] toArray(){
 
          long [] resultado = new long[coeficientes.length];
          resultado= coeficientes;
@@ -102,30 +118,30 @@ package calculus;
 
        }
      
-       Polinomio sumar(Polinomio otro)
+       Polinomio sumar(final Polinomio otro)
        {
-          int grado = Math.max( grado(), otro.grado() );
-          Polinomio resultado = new Polinomio(grado);
+          final int grado = Math.max( grado(), otro.grado() );
+          final Polinomio resultado = new Polinomio(grado);
           for ( int i = 0; i <= grado; ++i )
              resultado.coeficientes[i] = coeficiente(i) + otro.coeficiente(i);
      
           return resultado;
        }
      
-       Polinomio restar(Polinomio otro)
+       Polinomio restar(final Polinomio otro)
        {
-          int grado = Math.max( grado(), otro.grado() );
-          Polinomio resultado = new Polinomio(grado);
+          final int grado = Math.max( grado(), otro.grado() );
+          final Polinomio resultado = new Polinomio(grado);
           for ( int i = 0; i <= grado; ++i )
              resultado.coeficientes[i] = coeficiente(i) - otro.coeficiente(i);
      
           return resultado;
        }
      
-       Polinomio multiplicar(Polinomio otro)
+       Polinomio multiplicar(final Polinomio otro)
        {
-          int grado = grado() + otro.grado();
-          Polinomio resultado = new Polinomio(grado);
+          final int grado = grado() + otro.grado();
+          final Polinomio resultado = new Polinomio(grado);
           for ( int i = 0; i <= grado(); ++i )
              for ( int j = 0; j <= otro.grado(); ++j )
                 resultado.coeficientes[i + j] += coeficiente(i) * otro.coeficiente(j);
@@ -133,7 +149,7 @@ package calculus;
           return resultado;
        }
        
-       public static void imprimirOperacion(Polinomio a, Polinomio b, String op, Polinomio resultado)
+       public static void imprimirOperacion(final Polinomio a, final Polinomio b, final String op, final Polinomio resultado)
        {
           System.out.print("\n(");
           a.imprimir();

@@ -8,34 +8,39 @@ public class PolinomioTest {
 
 //Test constructor correcto
     @Test
-    public void testPolinomio() throws NullPointerException{
-        long[] poli = {2, 4, 8};
+    public void testPolinomio() throws Exception,NullPointerException{
+        long[] poli = {2, 4, 6, 9};
         Polinomio newPol = new Polinomio(poli);
-        newPol.imprimir();        
-        System.out.println();
+        newPol.toString();        
+        System.out.println(newPol);
     }
+
+
+
+
 
 //Test array con valor null
     @Test (expected=NullPointerException.class)
-    public void testNullPolinomio() throws NullPointerException{
+    public void testNullPolinomio() throws Exception,NullPointerException{
         long[] poli = null;
         Polinomio newP = new Polinomio(poli);
-        newP.imprimir();        
+        newP.toString();        
         System.out.println();
     }
+
 //Test método clone
     @Test
-    public void testClone(){
+    public void testClone()throws Exception{
         long[] poli = {1, 3, 7};
         Polinomio P = new Polinomio(poli);
-        Polinomio cloneP = P.clone();
-        cloneP.imprimir();       
+        Polinomio cloneP = P.getClone();
+        cloneP.toString();       
         assertEquals(P, cloneP); 
         //System.out.println();
     }
  //Test de sumar polinomios
  @Test
- public void testPolinomioSuma() {
+ public void testPolinomioSuma() throws Exception,NullPointerException {
      long [] coeficientes = new long [3];
      coeficientes[0] = 1L;
      coeficientes[1] = 3L;
@@ -59,7 +64,7 @@ public class PolinomioTest {
 
  //Test de multiplicar polinomios
  @Test
- public void testPolinomioMultiplicar() {
+ public void testPolinomioMultiplicar() throws Exception,NullPointerException{
 
 
 
@@ -83,7 +88,7 @@ public class PolinomioTest {
     prueba[4] = 1L;
 
     Polinomio polinomio3 = new Polinomio(prueba);
-    polinomio3.imprimir();
+    polinomio3.toString();
 
     assertEquals(polinomio3, polinomio1.multiplicar(polinomio2));
 
@@ -93,7 +98,7 @@ public class PolinomioTest {
  
  //Test de convertir en array un polinomio
  @Test
- public void testPolinomioArray() {
+ public void testPolinomioArray() throws Exception,NullPointerException{
 
      long [] coeficientes = new long [3];
      coeficientes[0] = 1L;
@@ -102,7 +107,7 @@ public class PolinomioTest {
 
      Polinomio polinomio1 = new Polinomio(coeficientes);
 
-     assertArrayEquals(coeficientes, polinomio1.aArray());
+     assertArrayEquals(coeficientes, polinomio1.toArray());
 
  }
 }
