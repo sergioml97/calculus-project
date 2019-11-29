@@ -16,8 +16,8 @@ public class Matrix {
   public Matrix() throws Exception{
     this(new double[0][0]);
   }
-
- //Constructor de matriz
+//-----------------------------------------------------------------------------
+//Constructor de matriz
  public Matrix(int M, int N) throws Exception {
       // Lanzar exceptión si N o M < 0
       if (M < 0 || N < 0) throw new Exception();
@@ -26,8 +26,8 @@ public class Matrix {
       data = new double[M][N];
 
   }
-
- //Constructor de matriz con array bidimensional
+//-----------------------------------------------------------------------------
+//Constructor de matriz con array bidimensional
  public Matrix(double[][] data) throws Exception, NullPointerException {
   M = data.length;
   N = data[0].length;
@@ -54,8 +54,8 @@ public class Matrix {
 }
 
 }
-
- //Metodo para pasar matriz a array
+//-----------------------------------------------------------------------------
+//Metodo para pasar matriz a array
  public double[][] toArray() {
   double[][] array = new double[M][N];
   for (int i = 0; i < M; i++)
@@ -64,6 +64,7 @@ public class Matrix {
 return array;
 }
 
+//-----------------------------------------------------------------------------
 //metodo para imprimir la matriz
 public void print() {
       for (int i = 0; i < M; i++) {
@@ -73,6 +74,7 @@ public void print() {
       }
   }
 
+//-----------------------------------------------------------------------------
 //metodo de matriz toString
 @Override
 public String toString() {
@@ -86,11 +88,13 @@ public String toString() {
     return s;
 }
 
+//-----------------------------------------------------------------------------
 //metodo para clonar matriz 
 public Matrix getClone() throws Exception, NullPointerException{
   return new Matrix(data);
 }
 
+//-----------------------------------------------------------------------------
 //metodo quitar fila
   public static Matrix quitarFila (Matrix m  , int n) throws Exception{ 
     
@@ -120,7 +124,8 @@ public Matrix getClone() throws Exception, NullPointerException{
       }       
     }
 
-    //metodo para quitar columna
+//-----------------------------------------------------------------------------
+//metodo para quitar columna
   public static Matrix quitarColumna (Matrix m  , int n) throws Exception{ 
     
     Matrix res  = null;    
@@ -149,7 +154,7 @@ public Matrix getClone() throws Exception, NullPointerException{
     }
 
 //-----------------------------------------------------------------------------
-    //método obtener Fila
+//método obtener Fila
     public static double[] obtenerFila(Matrix m, int n) throws Exception {
       Matrix res = new Matrix(0, 0);
       double[] row = new double[0];
@@ -175,8 +180,7 @@ public Matrix getClone() throws Exception, NullPointerException{
                                       }
                                                                            }
 
-  
-  //-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 // método obtener Columna
     public static double[] obtenerColumna(Matrix m, int c) throws Exception {
       Matrix res = new Matrix(0, 0);
@@ -203,7 +207,6 @@ public Matrix getClone() throws Exception, NullPointerException{
                             }
                                                                               }
 
-
 //----------------------------------------------------------------------------
 // método obtener traspuesta
 public Matrix getTraspuesta()throws Exception, NullPointerException {
@@ -215,8 +218,6 @@ public Matrix getTraspuesta()throws Exception, NullPointerException {
   }
   return tr;
 }    
-
-
 //----------------------------------------------------------------------------
   // metodo para comparar las matrices
   @Override
@@ -250,8 +251,8 @@ public Matrix getTraspuesta()throws Exception, NullPointerException {
 
     return true;
   }
-
-  // MAIN PARA MOSTRAR RESULTADOS
+//-----------------------------------------------------------------------------
+// MAIN PARA MOSTRAR RESULTADOS
   public static void main(String[] args) throws Exception {
     double[][] d = { { 1, 2, 3 }, { 4, 5, 6 }, { 9, 1, 3 } };
     Matrix D = new Matrix(d);
