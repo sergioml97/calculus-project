@@ -38,6 +38,20 @@ public class PolinomioTest {
         assertEquals(P, cloneP); 
         //System.out.println();
     }
+
+
+//Test derivada
+
+@Test
+public void testDerivada()throws Exception{
+    long[] poli = {1, 3, 7, 8};
+    Polinomio P = new Polinomio(poli);
+    Polinomio derivP = P.getDerivada();
+    derivP.toString(); 
+    System.out.println(derivP);       
+}
+
+
  //Test de sumar polinomios
  @Test
  public void testPolinomioSuma() throws Exception,NullPointerException {

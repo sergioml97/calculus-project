@@ -30,15 +30,26 @@ package calculus;
           return coeficientes.length - 1;
        }
 
+
+//////////////////////////////////////////////////////CLONAR///////////////////////////////////////////////////////
+
        public Polinomio getClone() throws Exception{
          return new Polinomio(coeficientes);
      }
+
+
+//////////////////////////////////////////////////////COEFICIENTES///////////////////////////////////////////////////////
+
 
 
        public long coeficiente(final int i)
        {
           return i < coeficientes.length ? coeficientes[i] : 0;
        }
+
+
+
+//////////////////////////////////////////////////IMPRIMIR///////////////////////////////////////////////////////////
 
        public void imprimir()
        {
@@ -54,6 +65,10 @@ package calculus;
           }
        }
        
+
+
+//////////////////////////////////////////////////CONVERTIR A STRING///////////////////////////////////////////////////////////
+
        public String toString() {
          String p = new String();
          for (int i = coeficientes.length - 1; i >= 0 ; i--) {
@@ -69,6 +84,20 @@ package calculus;
      }
 
 
+
+//////////////////////////////////////////////////////DERIVAR///////////////////////////////////////////////////////
+
+Polinomio getDerivada(){
+   int grado = grado();
+   Polinomio derivada = new Polinomio(grado);
+   for (int i = grado(); i > 0; --i ) {
+      derivada.coeficientes[i-1] = coeficientes[i] * i ;
+   }
+   return derivada;
+ }
+
+
+/////////////////////////////////////////////////COMPARACIÓN////////////////////////////////////////////////////////////
        
        @Override
        public boolean equals(final Object p){
@@ -101,13 +130,17 @@ package calculus;
            return true;
        }
 
-
+/*
        String aString() {
 
          String resultado1;
          resultado1= toString();
          return resultado1;
        }
+*/
+
+
+//////////////////////////////////////////////////CONVERTIR A ARRAY///////////////////////////////////////////////////////////
 
        long[] toArray(){
 
@@ -118,6 +151,9 @@ package calculus;
 
        }
      
+
+/////////////////////////////////////////////////////SUMAR////////////////////////////////////////////////////////
+
        Polinomio sumar(final Polinomio otro)
        {
           final int grado = Math.max( grado(), otro.grado() );
@@ -127,6 +163,10 @@ package calculus;
      
           return resultado;
        }
+
+
+///////////////////////////////////////////////////////RESTAR//////////////////////////////////////////////////////
+
      
        Polinomio restar(final Polinomio otro)
        {
@@ -138,6 +178,10 @@ package calculus;
           return resultado;
        }
      
+
+
+//////////////////////////////////////////////////////////MULTIPLICAR///////////////////////////////////////////////////
+
        Polinomio multiplicar(final Polinomio otro)
        {
           final int grado = grado() + otro.grado();
@@ -148,6 +192,10 @@ package calculus;
      
           return resultado;
        }
+
+
+//////////////////////////////////////////////////////IMPRIMIR OPERACIÓN///////////////////////////////////////////////////////
+
        
        public static void imprimirOperacion(final Polinomio a, final Polinomio b, final String op, final Polinomio resultado)
        {
