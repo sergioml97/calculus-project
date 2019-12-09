@@ -16,6 +16,7 @@ package calculus;
            }
          }catch  (final NullPointerException e){
             System.out.println("Array null");
+            throw e;
         } 
       }
        
@@ -88,7 +89,7 @@ package calculus;
 //////////////////////////////////////////////////////DERIVAR///////////////////////////////////////////////////////
 
 Polinomio getDerivada(){
-   int grado = grado();
+   int grado = grado()-1;
    Polinomio derivada = new Polinomio(grado);
    for (int i = grado(); i > 0; --i ) {
       derivada.coeficientes[i-1] = coeficientes[i] * i ;
@@ -208,8 +209,8 @@ Polinomio getDerivada(){
           System.out.println();
        }
      
-       /**
-       public static void main(String args[])
+       /*
+       public static void main(String args[]) throws Exception
        {
           int grado = 2;
           long [] coeficientes = new long [grado+1];
@@ -217,10 +218,10 @@ Polinomio getDerivada(){
           coeficientes[1] = (long) 3.00;
           coeficientes[2] = (long) 1.00;
 
-          Polinomio polinomio1 = new Polinomio(coeficientes, grado);
+          Polinomio polinomio1 = new Polinomio(coeficientes);
           System.out.println("Polinomio 1");
 
-          polinomio1.clone();
+          //polinomio1.clone();
 
           polinomio1.imprimir();
           //System.out.println("");
@@ -230,7 +231,7 @@ Polinomio getDerivada(){
      
           //System.out.println("\n\nPolinomio 2");
           coeficientes[0] = (long) 5.00;
-          Polinomio polinomio2 = new Polinomio(coeficientes, grado);
+          Polinomio polinomio2 = new Polinomio(coeficientes);
           //polinomio2.leer();
           polinomio2.imprimir();
      
@@ -240,6 +241,6 @@ Polinomio getDerivada(){
           imprimirOperacion( polinomio2, polinomio1, "-", polinomio2.restar(polinomio1) );
           imprimirOperacion( polinomio1, polinomio2, "*", polinomio1.multiplicar(polinomio2) );
        }
-       */
-      
+       
+      */
     }

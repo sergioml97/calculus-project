@@ -11,21 +11,13 @@ public class PolinomioTest {
     public void testPolinomio() throws Exception,NullPointerException{
         long[] poli = {2, 4, 6, 9};
         Polinomio newPol = new Polinomio(poli);
-        newPol.toString();        
-        System.out.println(newPol);
     }
-
-
-
-
 
 //Test array con valor null
     @Test (expected=NullPointerException.class)
     public void testNullPolinomio() throws Exception,NullPointerException{
         long[] poli = null;
         Polinomio newP = new Polinomio(poli);
-        newP.toString();        
-        System.out.println();
     }
 
 //Test método clone
@@ -41,14 +33,14 @@ public class PolinomioTest {
 
 
 //Test derivada
-
 @Test
 public void testDerivada()throws Exception{
     long[] poli = {1, 3, 7, 8};
     Polinomio P = new Polinomio(poli);
     Polinomio derivP = P.getDerivada();
-    derivP.toString(); 
-    System.out.println(derivP);       
+    assertEquals(derivP, new Polinomio(new long [] {3,14,24})); 
+    //derivP.imprimir();
+    //System.out.println(new Polinomio(new long [] {3,14,24}));       
 }
 
 
@@ -80,19 +72,16 @@ public void testDerivada()throws Exception{
  @Test
  public void testPolinomioMultiplicar() throws Exception,NullPointerException{
 
-
-
      long [] coeficientes = new long [3];
      coeficientes[0] = 1L;
      coeficientes[1] = 3L;
      coeficientes[2] = 1L;
 
      Polinomio polinomio1 = new Polinomio(coeficientes);
-
      Polinomio polinomio2 = new Polinomio(coeficientes);
 
     // polinomio1.imprimir();
-    polinomio1.imprimirOperacion( polinomio1, polinomio2, "*", polinomio1.multiplicar(polinomio2) );
+    //polinomio1.imprimirOperacion( polinomio1, polinomio2, "*", polinomio1.multiplicar(polinomio2) );
 
     long [] prueba = new long [5];
     prueba[0] = 1L;
@@ -106,7 +95,6 @@ public void testDerivada()throws Exception{
 
     assertEquals(polinomio3, polinomio1.multiplicar(polinomio2));
 
-     
  }
 
  
